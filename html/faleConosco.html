@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mais Comunhão - Fale Conosco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header id="menu"></header>
+
+  <main>
+    <h1>Fale Conosco</h1>
+    <p>Envie sua mensagem, dúvida ou testemunho. Será um prazer conversar com você!</p>
+
+    <form id="form-contato">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" required />
+
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <div id="resposta-contato"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mais Comunhão</p>
+  </footer>
+
+  <script src="javascript/carregarMenu.js"></script>
+  <script>
+    document.getElementById("form-contato").addEventListener("submit", function (e) {
+      e.preventDefault();
+      document.getElementById("resposta-contato").innerText = "Mensagem enviada com sucesso! Deus abençoe.";
+      this.reset();
+    });
+  </script>
+</body>
+</html>
