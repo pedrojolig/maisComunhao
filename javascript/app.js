@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuHTML = `
     <nav>
       <ul>
-        <li><a href="index.html">Início</a></li>
+        <li><a href="index.html">Página inicial</a></li>
         <li><a href="poesias.html">Poesias</a></li>
         <li><a href="convite.html">Convite</a></li>
         <li><a href="loja.html">Loja</a></li>
