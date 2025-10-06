@@ -8,41 +8,20 @@
 </head>
 <body>
   <header id="menu"></header>
-
   <main>
     <h1>Convite para Ministrar</h1>
-    <p>Se deseja nos convidar para ministrar em sua igreja ou evento, preencha o formulário abaixo:</p>
-
     <form id="form-convite">
-      <label for="nome">Seu Nome:</label>
-      <input type="text" id="nome" required />
-
-      <label for="evento">Nome do Evento:</label>
-      <input type="text" id="evento" required />
-
-      <label for="data">Data do Evento:</label>
-      <input type="date" id="data" required />
-
-      <label for="mensagem">Mensagem:</label>
-      <textarea id="mensagem" required></textarea>
-
+      <input type="text" placeholder="Seu Nome" required />
+      <input type="text" placeholder="Nome do Evento" required />
+      <input type="date" required />
+      <textarea placeholder="Mensagem" required></textarea>
       <button type="submit">Enviar Convite</button>
     </form>
-
     <div id="resposta-convite"></div>
   </main>
-
   <footer>
     <p>&copy; 2025 Mais Comunhão</p>
   </footer>
-
-  <script src="javascript/carregarMenu.js"></script>
-  <script>
-    document.getElementById("form-convite").addEventListener("submit", function (e) {
-      e.preventDefault();
-      document.getElementById("resposta-convite").innerText = "Convite enviado com sucesso! Entraremos em contato.";
-      this.reset();
-    });
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>

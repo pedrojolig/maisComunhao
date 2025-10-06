@@ -1,37 +1,40 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Carrega o menu em todas as páginas
-  fetch("menu.html")
-    .then(response => response.text())
-    .then(html => {
-      const menuContainer = document.getElementById("menu");
-      if (menuContainer) {
-        menuContainer.innerHTML = html;
-      }
-    })
-    .catch(error => console.error("Erro ao carregar o menu:", error));
+  // Menu dinâmico
+  const menuHTML = `
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="poesias.html">Poesias</a></li>
+        <li><a href="convite.html">Convite</a></li>
+        <li><a href="loja.html">Loja</a></li>
+        <li><a href="quemSomos.html">Quem Somos</a></li>
+        <li><a href="faleConosco.html">Fale Conosco</a></li>
+      </ul>
+    </nav>
+  `;
+  const menuContainer = document.getElementById("menu");
+  if (menuContainer) {
+    menuContainer.innerHTML = menuHTML;
+  }
 
-  // Lógica para a página de Convite
+  // Formulário de Convite
   const formConvite = document.getElementById("form-convite");
   if (formConvite) {
     formConvite.addEventListener("submit", function (e) {
       e.preventDefault();
-      const resposta = document.getElementById("resposta-convite");
-      if (resposta) {
-        resposta.innerText = "Convite enviado com sucesso! Entraremos em contato.";
-      }
+      document.getElementById("resposta-convite").innerText =
+        "Convite enviado com sucesso! Entraremos em contato.";
       formConvite.reset();
     });
   }
 
-  // Lógica para a página de Fale Conosco
+  // Formulário de Contato
   const formContato = document.getElementById("form-contato");
   if (formContato) {
     formContato.addEventListener("submit", function (e) {
       e.preventDefault();
-      const resposta = document.getElementById("resposta-contato");
-      if (resposta) {
-        resposta.innerText = "Mensagem enviada com sucesso! Deus abençoe.";
-      }
+      document.getElementById("resposta-contato").innerText =
+        "Mensagem enviada com sucesso! Deus abençoe.";
       formContato.reset();
     });
   }
