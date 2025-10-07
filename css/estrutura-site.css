@@ -1,0 +1,27 @@
+header, footer {
+  background-color: #f0f0f0;
+  padding: 1em;
+  text-align: center;
+}
+
+#logo img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1em;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+nav li {
+  display: inline;
+}
+
+main {
+  padding: 1em 2em;
+}
