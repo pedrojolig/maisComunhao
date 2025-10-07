@@ -8,8 +8,13 @@ import { tocarSom, toggleSom } from './audio.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   window.mostrarMenuInicial();
-  tocarSom("intro-mais-comunhao");
+  // Som só será tocado após interação do usuário
+  document.body.addEventListener("click", tocarIntroUmaVez, { once: true });
 });
+
+function tocarIntroUmaVez() {
+  tocarSom("intro-mais-comunhao");
+}
 
 window.abrirTela = function (tela) {
   const logo = document.getElementById("logo");
@@ -25,12 +30,19 @@ window.abrirTela = function (tela) {
 
   conteudo.innerHTML = telas[tela] || "<p>Tela não encontrada.</p>";
 
-  if (tela === "convite") configurarFormularioConvite();
-  if (tela === "faleConosco") configurarFormularioContato();
+  if (tela === "convite") {
+    configurarFormularioConvite();
+    tocarSom("som-formulario");
+  }
+
+  if (tela === "faleConosco") {
+    configurarFormularioContato();
+    tocarSom("som-formulario");
+  }
 
   if (tela === "loja") tocarSom("som-loja");
   else if (tela === "poesias") tocarSom("som-poesias");
-  else tocarSom("som-clique");
+  else if (tela !== "convite" && tela !== "faleConosco") tocarSom("som-clique");
 };
 
 window.mostrarMenuInicial = function () {
