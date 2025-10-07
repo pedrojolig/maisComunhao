@@ -6,14 +6,26 @@ import {
 } from './formularios.js';
 import { tocarSom, toggleSom } from './audio.js';
 
+let primeiraInteracao = false;
+
 document.addEventListener("DOMContentLoaded", () => {
   window.mostrarMenuInicial();
-  document.body.addEventListener("click", tocarIntroUmaVez, { once: true });
-});
 
-function tocarIntroUmaVez() {
-  tocarSom("intro-mais-comunhao");
-}
+  const ativarSom = () => {
+    if (!primeiraInteracao) {
+      primeiraInteracao = true;
+      const conteudo = document.getElementById("conteudo");
+      if (conteudo && conteudo.innerHTML.includes("Seja muito bem-vindo")) {
+        tocarSom("intro-mais-comunhao");
+      }
+    }
+  };
+
+  // Escuta qualquer tipo de interação do usuário
+  document.body.addEventListener("click", ativarSom, { once: true });
+  document.body.addEventListener("keydown", ativarSom, { once: true });
+  document.body.addEventListener("touchstart", ativarSom, { once: true });
+});
 
 window.abrirTela = function (tela) {
   const logo = document.getElementById("logo");
@@ -39,9 +51,13 @@ window.abrirTela = function (tela) {
     tocarSom("som-formulario");
   }
 
-  if (tela === "loja") tocarSom("som-loja");
-  else if (tela === "poesias") tocarSom("som-poesias");
-  else if (tela !== "convite" && tela !== "faleConosco") tocarSom("som-clique");
+  if (tela === "loja") {
+    tocarSom("som-loja");
+  } else if (tela === "poesias") {
+    tocarSom("som-poesias");
+  } else if (tela !== "convite" && tela !== "faleConosco") {
+    tocarSom("som-clique");
+  }
 };
 
 window.mostrarMenuInicial = function () {
