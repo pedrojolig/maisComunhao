@@ -1,5 +1,6 @@
 function carregarConvite() {
-  document.getElementById("conteudo").innerHTML = `
+  const conteudo = document.getElementById("conteudo");
+  conteudo.innerHTML = `
     <h1>Convite para Ministrar</h1>
     <form id="form-convite">
       <input type="text" placeholder="Seu Nome" required />
