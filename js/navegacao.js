@@ -21,7 +21,7 @@ export function mostrarMenuInicial() {
     <section id="boas-vindas">
       <h1>Shalom! Seja muito bem-vindo ao Ministério Mais Comunhão</h1>
       <p>
-        Que este espaço seja um lugar de paz, inspiração e comunhão com Deus. Aqui celebramos a fé, a arte e o amor que nos une como corpo de Cristo.
+        Que este espaço seja um lugar de paz, inspiração e comunhão com Deus. Aqui celebramos a fé, o amor que nos une como corpo de Cristo.
       </p>
       <blockquote>
         “O Senhor te abençoe e te guarde;<br>
