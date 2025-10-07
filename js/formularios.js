@@ -5,6 +5,9 @@ export function configurarFormularioConvite() {
   const botao = document.getElementById("btn-convite");
   const campos = form.querySelectorAll("input, textarea");
 
+  // Foco automático no primeiro campo
+  if (campos.length > 0) campos[0].focus();
+
   campos.forEach(campo => {
     campo.addEventListener("input", () => {
       const preenchido = Array.from(campos).every(i => i.value.trim() !== "");
@@ -27,6 +30,9 @@ export function configurarFormularioContato() {
   const botao = document.getElementById("btn-contato");
   const campos = form.querySelectorAll("input, textarea");
 
+  // Foco automático no primeiro campo
+  if (campos.length > 0) campos[0].focus();
+
   campos.forEach(campo => {
     campo.addEventListener("input", () => {
       const preenchido = Array.from(campos).every(i => i.value.trim() !== "");
@@ -37,7 +43,7 @@ export function configurarFormularioContato() {
   form.addEventListener("submit", e => {
     e.preventDefault();
     tocarSom("som-formulario");
-  document.getElementById("resposta-contato").innerText =
+    document.getElementById("resposta-contato").innerText =
       "Mensagem enviada com sucesso! Deus abençoe.";
     form.reset();
     botao.disabled = true;

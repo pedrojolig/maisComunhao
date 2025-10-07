@@ -6,25 +6,25 @@ import {
 } from './formularios.js';
 import { tocarSom, toggleSom } from './audio.js';
 
-let primeiraInteracao = false;
-
 document.addEventListener("DOMContentLoaded", () => {
   window.mostrarMenuInicial();
 
-  const ativarSom = () => {
-    if (!primeiraInteracao) {
-      primeiraInteracao = true;
-      const conteudo = document.getElementById("conteudo");
-      if (conteudo && conteudo.innerHTML.includes("Seja muito bem-vindo")) {
-        tocarSom("intro-mais-comunhao");
-      }
-    }
-  };
+  // Tenta tocar som imediatamente
+  const audio = new Audio("audio/intro-mais-comunhao.mp3");
+  audio.volume = 0.5;
+  audio.play().catch(() => {
+    // Se falhar, aguarda primeira interação
+    const ativarSom = () => {
+      audio.play();
+      document.body.removeEventListener("click", ativarSom);
+      document.body.removeEventListener("keydown", ativarSom);
+      document.body.removeEventListener("touchstart", ativarSom);
+    };
 
-  // Escuta qualquer tipo de interação do usuário
-  document.body.addEventListener("click", ativarSom, { once: true });
-  document.body.addEventListener("keydown", ativarSom, { once: true });
-  document.body.addEventListener("touchstart", ativarSom, { once: true });
+    document.body.addEventListener("click", ativarSom);
+    document.body.addEventListener("keydown", ativarSom);
+    document.body.addEventListener("touchstart", ativarSom);
+  });
 });
 
 window.abrirTela = function (tela) {
