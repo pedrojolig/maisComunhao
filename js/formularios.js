@@ -1,3 +1,5 @@
+import { tocarSom } from './audio.js';
+
 export function configurarFormularioConvite() {
   const form = document.getElementById("form-convite");
   const botao = document.getElementById("btn-convite");
@@ -12,6 +14,7 @@ export function configurarFormularioConvite() {
 
   form.addEventListener("submit", e => {
     e.preventDefault();
+    tocarSom("som-formulario");
     document.getElementById("resposta-convite").innerText =
       "Convite enviado com sucesso! Entraremos em contato.";
     form.reset();
@@ -33,7 +36,8 @@ export function configurarFormularioContato() {
 
   form.addEventListener("submit", e => {
     e.preventDefault();
-    document.getElementById("resposta-contato").innerText =
+    tocarSom("som-formulario");
+  document.getElementById("resposta-contato").innerText =
       "Mensagem enviada com sucesso! Deus abençoe.";
     form.reset();
     botao.disabled = true;
