@@ -8,7 +8,6 @@ import { tocarSom, toggleSom } from './audio.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   window.mostrarMenuInicial();
-  // Som só será tocado após interação do usuário
   document.body.addEventListener("click", tocarIntroUmaVez, { once: true });
 });
 
