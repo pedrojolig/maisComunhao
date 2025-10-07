@@ -7,10 +7,8 @@ function mostrarMenuInicial() {
   const menuContainer = document.getElementById("menu");
   const conteudo = document.getElementById("conteudo");
 
-  // Exibe a logo
   if (logo) logo.style.display = "block";
 
-  // Menu completo
   menuContainer.innerHTML = `
     <nav>
       <ul>
@@ -20,11 +18,11 @@ function mostrarMenuInicial() {
         <li><a href="#" onclick="abrirTela('loja')">Loja</a></li>
         <li><a href="#" onclick="abrirTela('quemSomos')">Quem Somos</a></li>
         <li><a href="#" onclick="abrirTela('faleConosco')">Fale Conosco</a></li>
+        <li><a href="#" onclick="abrirTela('agenda')">Agenda & Álbum</a></li>
       </ul>
     </nav>
   `;
 
-  // Tela inicial
   conteudo.innerHTML = `
     <h1>Bem-vindos ao Ministério Mais Comunhão</h1>
     <p>Este é o nosso espaço para compartilhar fé, arte e amor.</p>
@@ -36,15 +34,12 @@ function abrirTela(tela) {
   const menuContainer = document.getElementById("menu");
   const conteudo = document.getElementById("conteudo");
 
-  // Oculta a logo
   if (logo) logo.style.display = "none";
 
-  // Substitui o menu pelo botão voltar
   menuContainer.innerHTML = `
     <button onclick="mostrarMenuInicial()" style="margin: 1em;">← Voltar</button>
   `;
 
-  // Carrega a tela correspondente
   switch (tela) {
     case "inicio":
       conteudo.innerHTML = `
@@ -118,6 +113,26 @@ function abrirTela(tela) {
           "Mensagem enviada com sucesso! Deus abençoe.";
         this.reset();
       });
+      break;
+
+    case "agenda":
+      conteudo.innerHTML = `
+        <h2>Confira nossa agenda.</h2>
+        <p>
+          Dia 11 de outubro de 2025: evento na Arena de Pernambuco, às 13 horas.
+        </p>
+
+        <h2>Álbum <strong>Mais Comunhão</strong></h2>
+        <p>
+          Confira as músicas do EP Mais Comunhão.<br>
+          <a href="https://open.spotify.com/intl-pt/track/6wn3ZDK4ahgIMW9BErWGVl?si=53db13e3c9924643" target="_blank">
+            Tocar Mais Comunhão no <strong>Spotify</strong>
+          </a><br>
+          <a href="https://youtu.be/PgAUuSSgSW8?si=3xJBpU90u1V7K7qi" target="_blank">
+            Tocar Mais Comunhão no <strong>YouTube</strong>
+          </a>
+        </p>
+      `;
       break;
   }
 }
