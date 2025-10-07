@@ -8,23 +8,6 @@ import { tocarSom, toggleSom } from './audio.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   window.mostrarMenuInicial();
-
-  // Tenta tocar som imediatamente
-  const audio = new Audio("audio/intro-mais-comunhao.mp3");
-  audio.volume = 0.5;
-  audio.play().catch(() => {
-    // Se falhar, aguarda primeira interação
-    const ativarSom = () => {
-      audio.play();
-      document.body.removeEventListener("click", ativarSom);
-      document.body.removeEventListener("keydown", ativarSom);
-      document.body.removeEventListener("touchstart", ativarSom);
-    };
-
-    document.body.addEventListener("click", ativarSom);
-    document.body.addEventListener("keydown", ativarSom);
-    document.body.addEventListener("touchstart", ativarSom);
-  });
 });
 
 window.abrirTela = function (tela) {
@@ -55,8 +38,6 @@ window.abrirTela = function (tela) {
     tocarSom("som-loja");
   } else if (tela === "poesias") {
     tocarSom("som-poesias");
-  } else if (tela !== "convite" && tela !== "faleConosco") {
-    tocarSom("som-clique");
   }
 };
 
