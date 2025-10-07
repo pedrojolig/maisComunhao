@@ -43,7 +43,7 @@ window.abrirTela = function (tela) {
 
 window.mostrarMenuInicial = function () {
   mostrarMenuInicial();
-  tocarSom("som-voltar");
+  tocarSom("telaInicial");
 };
 
 window.toggleSom = toggleSom;
