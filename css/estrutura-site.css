@@ -4,10 +4,19 @@ header, footer {
   text-align: center;
 }
 
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+
 #logo img {
   max-width: 100%;
   height: auto;
-  margin-bottom: 1em;
+  width: clamp(200px, 50%, 400px);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
