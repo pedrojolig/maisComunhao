@@ -1,7 +1,5 @@
-// Verifica o estado inicial do som com base no localStorage
 let somLigado = localStorage.getItem("somLigado") !== "false";
 
-// Função para tocar som, se estiver ativado
 export function tocarSom(tipo) {
   if (!somLigado) return;
 
@@ -17,19 +15,24 @@ export function tocarSom(tipo) {
   if (caminho) {
     const audio = new Audio(caminho);
     audio.play().catch(() => {
-      // Alguns navegadores bloqueiam autoplay sem interação
       console.warn("Não foi possível reproduzir o áudio:", caminho);
     });
   }
 }
 
-// Alterna o estado do som e atualiza o botão
 export function toggleSom() {
   somLigado = !somLigado;
   localStorage.setItem("somLigado", somLigado);
 
   const botao = document.getElementById("controle-som");
   if (botao) {
-    botao.textContent = somLigado ? "🔊 Som: Ligado" : "🔇 Som: Desligado";
+    botao.textContent = somLigado ? "🔊" : "🔇";
+  }
+}
+
+export function atualizarBotaoSom() {
+  const botao = document.getElementById("controle-som");
+  if (botao) {
+    botao.textContent = somLigado ? "🔊" : "🔇";
   }
 }
