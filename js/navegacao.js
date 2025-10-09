@@ -5,18 +5,7 @@ export function mostrarMenuInicial() {
 
   if (logo) logo.style.display = "block";
 
-  menuContainer.innerHTML = `
-    <nav>
-      <ul>
-        <li><a href="#" onclick="abrirTela('poesias')">Poesias</a></li>
-        <li><a href="#" onclick="abrirTela('convite')">Convite</a></li>
-        <li><a href="#" onclick="abrirTela('loja')">Loja</a></li>
-        <li><a href="#" onclick="abrirTela('quemSomos')">Quem Somos</a></li>
-        <li><a href="#" onclick="abrirTela('faleConosco')">Fale Conosco</a></li>
-      </ul>
-    </nav>
-  `;
-
+  // Primeiro, exibe as boas-vindas e conteúdo principal
   conteudo.innerHTML = `
     <section id="boas-vindas">
       <h1>Shalom! Seja muito bem-vindo ao Ministério Mais Comunhão</h1>
@@ -46,5 +35,18 @@ export function mostrarMenuInicial() {
         Tocar Mais Comunhão no <strong>YouTube</strong>
       </a>
     </p>
+  `;
+
+  // Depois, exibe o menu com os links das telas
+  menuContainer.innerHTML = `
+    <nav>
+      <ul>
+        <li><a href="#" onclick="abrirTela('poesias')">Poesias</a></li>
+        <li><a href="#" onclick="abrirTela('convite')">Convite</a></li>
+        <li><a href="#" onclick="abrirTela('loja')">Loja</a></li>
+        <li><a href="#" onclick="abrirTela('quemSomos')">Quem Somos</a></li>
+        <li><a href="#" onclick="abrirTela('faleConosco')">Fale Conosco</a></li>
+      </ul>
+    </nav>
   `;
 }

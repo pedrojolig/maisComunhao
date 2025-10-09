@@ -4,28 +4,31 @@ export const telas = {
     <ul>
       <li>
         <a href="https://youtu.be/oQ8BKHoMZ1Y" target="_blank">
-          Assistir à poesia "Minha Identidade" no YouTube
+          Poesia "Minha Identidade"
         </a>
       </li>
       <li>
         <a href="https://youtu.be/H_EIW4W34U8" target="_blank">
-          Assistir à poesia "Tu Sabes Que Eu Te Amo, Senhor" no YouTube
+          Poesia "Tu Sabes Que Eu Te Amo, Senhor" no YouTube
         </a>
       </li>
       <li>
         <a href="https://youtu.be/2jBGCybzzKQ" target="_blank">
-          Assistir à poesia "Seremos Sempre Assim" no YouTube
+          Poesia "Seremos Sempre Assim" no YouTube
         </a>
       </li>
       <li>
         <a href="https://youtu.be/2i825adsCVg" target="_blank">
-          Assistir à poesia "Hoje Eu Quero Falar de Saudade" no YouTube
+          Poesia "Hoje Eu Quero Falar de Saudade" no YouTube
         </a>
       </li>
       <li>
         <a href="https://youtu.be/nPhrfEz__ig" target="_blank">
-          Assistir à poesia "Conforma-me Contigo" no YouTube
+          Poesia "Conforma-me Contigo" no YouTube
         </a>
+      </li>
+      <li>
+      <a href="https://www.youtube.com/@ketyanne-ofc">Poesias, pregações, louvores, e muito mais em ketyanne-ofc no youtube</a>
       </li>
     </ul>
   `,
