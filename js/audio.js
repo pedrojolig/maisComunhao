@@ -1,38 +1,31 @@
-let somLigado = localStorage.getItem("somLigado") !== "false";
+const sons = {
+  "telaInicial.wav": new Audio("audio/telaInicial.wav"),
+  "som-formulario.wav": new Audio("audio/som-formulario.wav"),
+  "faleConosco.wav": new Audio("audio/faleConosco.wav"),
+  "loja.wav": new Audio("audio/loja.wav"),
+  "poesias.wav": new Audio("audio/poesias.wav"),
+  "quemSomos.wav": new Audio("audio/quemSomos.wav"),
+  "albuns.wav": new Audio("audio/albuns.wav"),
+  "entrega.wav": new Audio("audio/entrega.wav"),
+  "epMaisComunhao.wav": new Audio("audio/epMaisComunhao.wav")
+};
 
-export function tocarSom(tipo) {
-  if (!somLigado) return;
-
-  const sons = {
-    "telaInicial": "audio/telaInicial.mp3",
-    "som-formulario": "audio/som-formulario.mp3",
-    "som-loja": "audio/som-loja.mp3",
-    "som-poesias": "audio/som-poesias.mp3",
-    "som-voltar": "audio/som-voltar.mp3"
-  };
-
-  const caminho = sons[tipo];
-  if (caminho) {
-    const audio = new Audio(caminho);
-    audio.play().catch(() => {
-      console.warn("Não foi possível reproduzir o áudio:", caminho);
-    });
+export function tocarSom(nome) {
+  if (sons[nome]) {
+    sons[nome].play();
   }
 }
 
 export function toggleSom() {
-  somLigado = !somLigado;
-  localStorage.setItem("somLigado", somLigado);
-
-  const botao = document.getElementById("controle-som");
-  if (botao) {
-    botao.textContent = somLigado ? "🔊" : "🔇";
-  }
+  const estadoAtual = localStorage.getItem("somAtivo") === "true";
+  localStorage.setItem("somAtivo", !estadoAtual);
+  atualizarBotaoSom();
 }
 
 export function atualizarBotaoSom() {
   const botao = document.getElementById("controle-som");
+  const somAtivo = localStorage.getItem("somAtivo") === "true";
   if (botao) {
-    botao.textContent = somLigado ? "🔊" : "🔇";
+    botao.textContent = somAtivo ? "🔊" : "🔇";
   }
 }
