@@ -3,22 +3,12 @@ let somLigado = localStorage.getItem("somLigado") !== "false";
 export function tocarSom(tipo) {
   if (!somLigado) return;
 
-  const sons = {
-    "telaInicial": "audio/telaInicial.mp3",
-    "som-formulario": "audio/som-formulario.mp3",
-    "som-loja": "audio/som-loja.mp3",
-    "som-poesias": "audio/som-poesias.mp3",
-    "som-voltar": "audio/som-voltar.mp3",
-    "albuns": "audio/albuns.mp3" // ✅ som da tela albuns adicionado aqui
-  };
+  const caminho = `audio/${tipo}.wav`;
 
-  const caminho = sons[tipo];
-  if (caminho) {
-    const audio = new Audio(caminho);
-    audio.play().catch(() => {
-      console.warn("Não foi possível reproduzir o áudio:", caminho);
-    });
-  }
+  const audio = new Audio(caminho);
+  audio.play().catch(() => {
+    console.warn("Não foi possível reproduzir o áudio:", caminho);
+  });
 }
 
 export function toggleSom() {

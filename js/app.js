@@ -29,32 +29,32 @@ window.abrirTela = function (tela) {
   // Sons específicos por tela
   if (tela === "convite") {
     configurarFormularioConvite();
-    tocarSom("som-formulario.wav");
+    tocarSom("som-formulario");
   }
 
   if (tela === "faleConosco") {
     configurarFormularioContato();
-    tocarSom("faleConosco.wav");
+    tocarSom("faleConosco");
   }
 
   if (tela === "loja") {
-    tocarSom("loja.wav");
+    tocarSom("loja");
   } else if (tela === "poesias") {
-    tocarSom("poesias.wav");
+    tocarSom("poesias");
   } else if (tela === "quemSomos") {
-    tocarSom("quemSomos.wav");
+    tocarSom("quemSomos");
   } else if (tela === "albuns") {
-    tocarSom("albuns.wav");
+    tocarSom("albuns");
   } else if (tela === "cdEntrega") {
-    tocarSom("entrega.wav");
+    tocarSom("entrega");
   } else if (tela === "epMaisComunhao") {
-    tocarSom("epMaisComunhao.wav");
+    tocarSom("epMaisComunhao");
   }
 };
 
 window.mostrarMenuInicial = function () {
   mostrarMenuInicial();
-  tocarSom("telaInicial.wav");
+  tocarSom("telaInicial");
 
   const botaoSom = document.getElementById("controle-som");
   if (botaoSom) atualizarBotaoSom();
