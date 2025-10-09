@@ -34,8 +34,8 @@ export const telas = {
       </li>
     </ul>
   `,
-  album: `
-    <h1>Álbum Mais Comunhão</h1>
+  albuns: `
+    <h1>Álbuns Mais Comunhão</h1>
     <p>Confira as músicas do EP <strong>Mais Comunhão</strong> disponíveis nas plataformas:</p>
     <ul>
       <li>

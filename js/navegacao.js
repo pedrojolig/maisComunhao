@@ -5,7 +5,7 @@ export function mostrarMenuInicial() {
 
   if (logo) logo.style.display = "block";
 
-  // Primeiro, exibe as boas-vindas
+  // Exibe a mensagem de boas-vindas
   conteudo.innerHTML = `
     <section id="boas-vindas">
       <h1>Shalom! Seja muito bem-vindo ao Ministério Mais Comunhão</h1>
@@ -20,23 +20,24 @@ export function mostrarMenuInicial() {
       </blockquote>
     </section>
 
-    <h2>Confira nossa agenda.</h2>
+    <h2>Menu</h2>
+    <nav aria-label="Menu principal">
+      <ul>
+        <li><a href="#" onclick="abrirTela('poesias')">Poesias</a></li>
+        <li><a href="#" onclick="abrirTela('convite')">Convite</a></li>
+        <li><a href="#" onclick="abrirTela('loja')">Loja</a></li>
+        <li><a href="#" onclick="abrirTela('albuns')">Álbuns</a></li>
+        <li><a href="#" onclick="abrirTela('quemSomos')">Quem Somos</a></li>
+        <li><a href="#" onclick="abrirTela('faleConosco')">Fale Conosco</a></li>
+      </ul>
+    </nav>
+
+    <h3>Confira nossa agenda</h3>
     <p>
       Dia 11 de outubro de 2025: evento na Arena de Pernambuco, às 13 horas.
     </p>
   `;
 
-  // Depois, exibe o menu com o novo item "Álbum"
-  menuContainer.innerHTML = `
-    <nav>
-      <ul>
-        <li><a href="#" onclick="abrirTela('poesias')">Poesias</a></li>
-        <li><a href="#" onclick="abrirTela('convite')">Convite</a></li>
-        <li><a href="#" onclick="abrirTela('loja')">Loja</a></li>
-        <li><a href="#" onclick="abrirTela('album')">Álbum</a></li>
-        <li><a href="#" onclick="abrirTela('quemSomos')">Quem Somos</a></li>
-        <li><a href="#" onclick="abrirTela('faleConosco')">Fale Conosco</a></li>
-      </ul>
-    </nav>
-  `;
+  // Limpa o menuContainer para evitar duplicidade
+  menuContainer.innerHTML = "";
 }
