@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.mostrarMenuInicial();
 });
 
-// Expondo funções globais para uso via onclick
 window.abrirTela = function (tela) {
   const logo = document.getElementById("logo");
   const menuContainer = document.getElementById("menu");
@@ -18,38 +17,45 @@ window.abrirTela = function (tela) {
 
   if (logo) logo.style.display = "none";
 
-  // Renderiza menu com botão voltar e botão de som
   menuContainer.innerHTML = `
     <button onclick="window.mostrarMenuInicial()" style="margin: 1em;">← Voltar</button>
     <button id="controle-som" onclick="window.toggleSom()" style="margin: 1em;"></button>
   `;
-  atualizarBotaoSom(); // Atualiza texto do botão com base no estado atual
+  atualizarBotaoSom();
 
-  // Renderiza conteúdo da tela
   conteudo.innerHTML = telas[tela] || "<p>Tela não encontrada.</p>";
 
-  // Configurações específicas por tela
-  if (tela === "convite") {
-    configurarFormularioConvite();
-    tocarSom("som-formulario");
-  }
+  switch (tela) {
+    case "convite":
+      configurarFormularioConvite();
+      tocarSom("som-formulario");
+      break;
 
-  if (tela === "faleConosco") {
-    configurarFormularioContato();
-    tocarSom("som-formulario");
-  }
+    case "faleConosco":
+      configurarFormularioContato();
+      tocarSom("som-formulario");
+      break;
 
-  if (tela === "loja") {
-    tocarSom("som-loja");
-  } else if (tela === "poesias") {
-    tocarSom("som-poesias");
+    case "loja":
+      tocarSom("som-loja");
+      break;
+
+    case "poesias":
+      tocarSom("som-poesias");
+      break;
+
+    case "inicio":
+      tocarSom("telaInicial");
+      break;
+
+    default:
+      break;
   }
 };
 
 window.mostrarMenuInicial = function () {
   mostrarMenuInicial();
 
-  // Atualiza botão de som na tela inicial, se estiver presente
   const menuContainer = document.getElementById("menu");
   if (menuContainer) {
     const botaoSom = document.createElement("button");
