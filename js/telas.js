@@ -4,31 +4,49 @@ export const telas = {
     <ul>
       <li>
         <a href="https://youtu.be/oQ8BKHoMZ1Y" target="_blank">
-          Poesia "Minha Identidade"
+          Assistir à poesia "Minha Identidade" no YouTube
         </a>
       </li>
       <li>
         <a href="https://youtu.be/H_EIW4W34U8" target="_blank">
-          Poesia "Tu Sabes Que Eu Te Amo, Senhor" no YouTube
+          Assistir à poesia "Tu Sabes Que Eu Te Amo, Senhor" no YouTube
         </a>
       </li>
       <li>
         <a href="https://youtu.be/2jBGCybzzKQ" target="_blank">
-          Poesia "Seremos Sempre Assim" no YouTube
+          Assistir à poesia "Seremos Sempre Assim" no YouTube
         </a>
       </li>
       <li>
         <a href="https://youtu.be/2i825adsCVg" target="_blank">
-          Poesia "Hoje Eu Quero Falar de Saudade" no YouTube
+          Assistir à poesia "Hoje Eu Quero Falar de Saudade" no YouTube
         </a>
       </li>
       <li>
         <a href="https://youtu.be/nPhrfEz__ig" target="_blank">
-          Poesia "Conforma-me Contigo" no YouTube
+          Assistir à poesia "Conforma-me Contigo" no YouTube
         </a>
       </li>
       <li>
-      <a href="https://www.youtube.com/@ketyanne-ofc">Poesias, pregações, louvores, e muito mais em ketyanne-ofc no youtube</a>
+        <a href="https://www.youtube.com/@ketyanne-ofc" target="_blank">
+          Poesias, pregações, louvores e muito mais em ketyanne-ofc no YouTube
+        </a>
+      </li>
+    </ul>
+  `,
+  album: `
+    <h1>Álbum Mais Comunhão</h1>
+    <p>Confira as músicas do EP <strong>Mais Comunhão</strong> disponíveis nas plataformas:</p>
+    <ul>
+      <li>
+        <a href="https://open.spotify.com/intl-pt/track/6wn3ZDK4ahgIMW9BErWGVl?si=53db13e3c9924643" target="_blank">
+          Ouvir no Spotify
+        </a>
+      </li>
+      <li>
+        <a href="https://youtu.be/PgAUuSSgSW8?si=3xJBpU90u1V7K7qi" target="_blank">
+          Ouvir no YouTube
+        </a>
       </li>
     </ul>
   `,

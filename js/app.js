@@ -40,6 +40,8 @@ window.abrirTela = function (tela) {
     tocarSom("som-loja");
   } else if (tela === "poesias") {
     tocarSom("som-poesias");
+  } else if (tela === "album") {
+    tocarSom("som-album");
   }
 };
 
