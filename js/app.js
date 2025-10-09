@@ -29,11 +29,19 @@ window.abrirTela = function (tela) {
     case "convite":
       configurarFormularioConvite();
       tocarSom("som-formulario");
+      setTimeout(() => {
+        const campo = document.querySelector("#form-convite input[placeholder='Seu Nome']");
+        if (campo) campo.focus();
+      }, 100);
       break;
 
     case "faleConosco":
       configurarFormularioContato();
       tocarSom("som-formulario");
+      setTimeout(() => {
+        const campo = document.querySelector("#form-contato input[placeholder='Seu Nome']");
+        if (campo) campo.focus();
+      }, 100);
       break;
 
     case "loja":
@@ -56,17 +64,20 @@ window.abrirTela = function (tela) {
 window.mostrarMenuInicial = function () {
   mostrarMenuInicial();
 
-  const menuContainer = document.getElementById("menu");
-  if (menuContainer) {
-    const botaoSom = document.createElement("button");
-    botaoSom.id = "controle-som";
-    botaoSom.onclick = window.toggleSom;
-    botaoSom.style.marginTop = "1em";
-    menuContainer.appendChild(botaoSom);
-    atualizarBotaoSom();
-  }
-
   tocarSom("telaInicial");
+
+  // Só mostra o botão de som após o áudio iniciar
+  setTimeout(() => {
+    const menuContainer = document.getElementById("menu");
+    if (menuContainer) {
+      const botaoSom = document.createElement("button");
+      botaoSom.id = "controle-som";
+      botaoSom.onclick = window.toggleSom;
+      botaoSom.style.marginTop = "1em";
+      menuContainer.appendChild(botaoSom);
+      atualizarBotaoSom();
+    }
+  }, 300); // tempo suficiente para o áudio iniciar
 };
 
 window.toggleSom = toggleSom;
