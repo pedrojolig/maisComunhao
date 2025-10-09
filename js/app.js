@@ -31,23 +31,35 @@ window.abrirTela = function (tela) {
   // Configurações específicas por tela
   if (tela === "convite") {
     configurarFormularioConvite();
-    tocarSom("somFormulario");
+    tocarSom("som-formulario");
   }
 
   if (tela === "faleConosco") {
     configurarFormularioContato();
-    tocarSom("somFormulario");
+    tocarSom("som-formulario");
   }
 
   if (tela === "loja") {
-    tocarSom("somLoja");
+    tocarSom("som-loja");
   } else if (tela === "poesias") {
-    tocarSom("somPoesias");
+    tocarSom("som-poesias");
   }
 };
 
 window.mostrarMenuInicial = function () {
   mostrarMenuInicial();
+
+  // Atualiza botão de som na tela inicial, se estiver presente
+  const menuContainer = document.getElementById("menu");
+  if (menuContainer) {
+    const botaoSom = document.createElement("button");
+    botaoSom.id = "controle-som";
+    botaoSom.onclick = window.toggleSom;
+    botaoSom.style.marginTop = "1em";
+    menuContainer.appendChild(botaoSom);
+    atualizarBotaoSom();
+  }
+
   tocarSom("telaInicial");
 };
 

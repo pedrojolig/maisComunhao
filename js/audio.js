@@ -1,4 +1,4 @@
-// Verifica o estado inicial do som com base no localStorage
+// Estado inicial do som baseado no localStorage
 let somLigado = localStorage.getItem("somLigado") !== "false";
 
 // Função para tocar som, se estiver ativado
@@ -6,10 +6,11 @@ export function tocarSom(tipo) {
   if (!somLigado) return;
 
   const sons = {
-    telaInicial: "audio/tela-inicial.mp3",
-    somFormulario: "audio/formulario.mp3",
-    somLoja: "audio/loja.mp3",
-    somPoesias: "audio/poesias.mp3"
+    telaInicial: "audio/telaInicial.mp3",
+    somFormulario: "audio/som-formulario.mp3",
+    somLoja: "audio/som-loja.mp3",
+    somPoesias: "audio/som-poesias.mp3",
+    somVoltar: "audio/som-voltar.mp3"
   };
 
   const caminho = sons[tipo];
