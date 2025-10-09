@@ -25,49 +25,44 @@ window.abrirTela = function (tela) {
 
   conteudo.innerHTML = telas[tela] || "<p>Tela não encontrada.</p>";
 
-  switch (tela) {
-    case "convite":
-      configurarFormularioConvite();
-      tocarSom("som-formulario");
-      setTimeout(() => {
-        const campo = document.querySelector("#form-convite input[placeholder='Seu Nome']");
-        if (campo) campo.focus();
-      }, 100);
-      break;
+  // Aguarda o DOM ser atualizado antes de executar ações específicas
+  setTimeout(() => {
+    switch (tela) {
+      case "convite":
+        configurarFormularioConvite();
+        const campoConvite = document.querySelector("#form-convite input[placeholder='Seu Nome']");
+        if (campoConvite) campoConvite.focus();
+        tocarSom("som-formulario");
+        break;
 
-    case "faleConosco":
-      configurarFormularioContato();
-      tocarSom("som-formulario");
-      setTimeout(() => {
-        const campo = document.querySelector("#form-contato input[placeholder='Seu Nome']");
-        if (campo) campo.focus();
-      }, 100);
-      break;
+      case "faleConosco":
+        configurarFormularioContato();
+        const campoContato = document.querySelector("#form-contato input[placeholder='Seu Nome']");
+        if (campoContato) campoContato.focus();
+        tocarSom("som-formulario");
+        break;
 
-    case "loja":
-      tocarSom("som-loja");
-      break;
+      case "loja":
+        tocarSom("som-loja");
+        break;
 
-    case "poesias":
-      tocarSom("som-poesias");
-      break;
+      case "poesias":
+        tocarSom("som-poesias");
+        break;
 
-    case "inicio":
-      tocarSom("telaInicial");
-      break;
-
-    default:
-      break;
-  }
+      case "inicio":
+        tocarSom("telaInicial");
+        break;
+    }
+  }, 200); // tempo suficiente para o DOM atualizar
 };
 
 window.mostrarMenuInicial = function () {
   mostrarMenuInicial();
 
-  tocarSom("telaInicial");
-
-  // Só mostra o botão de som após o áudio iniciar
   setTimeout(() => {
+    tocarSom("telaInicial");
+
     const menuContainer = document.getElementById("menu");
     if (menuContainer) {
       const botaoSom = document.createElement("button");
@@ -77,7 +72,7 @@ window.mostrarMenuInicial = function () {
       menuContainer.appendChild(botaoSom);
       atualizarBotaoSom();
     }
-  }, 300); // tempo suficiente para o áudio iniciar
+  }, 300);
 };
 
 window.toggleSom = toggleSom;
