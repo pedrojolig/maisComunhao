@@ -36,17 +36,17 @@ export const telas = {
   `,
 
   albuns: `
-    <h1>Álbuns Mais Comunhão</h1>
-    <p>Escolha uma das opções abaixo para visualizar os detalhes:</p>
+    <h1>Álbuns</h1>
+    <p>Escolha uma das opções abaixo:</p>
     <ul>
       <li>
         <a href="#" onclick="abrirTela('epMaisComunhao')">
-          🎵 Ver EP "Mais Comunhão"
+          🎵 EP "Mais Comunhão"
         </a>
       </li>
       <li>
         <a href="#" onclick="abrirTela('cdEntrega')">
-          💿 Ver CD "Entrega"
+          💿 CD "Entrega"
         </a>
       </li>
     </ul>
