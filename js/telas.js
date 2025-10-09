@@ -1,10 +1,32 @@
 export const telas = {
   poesias: `
-    <h1>Poesias</h1>
+    <h1>Poesias de Ketyanne</h1>
     <ul>
-      <li>"Promessa Viva"</li>
-      <li>"Teu Amor nos Une"</li>
-      <li>"Mais Comunhão"</li>
+      <li>
+        <a href="https://youtu.be/oQ8BKHoMZ1Y" target="_blank">
+          Assistir à poesia "Minha Identidade" no YouTube
+        </a>
+      </li>
+      <li>
+        <a href="https://youtu.be/H_EIW4W34U8" target="_blank">
+          Assistir à poesia "Tu Sabes Que Eu Te Amo, Senhor" no YouTube
+        </a>
+      </li>
+      <li>
+        <a href="https://youtu.be/2jBGCybzzKQ" target="_blank">
+          Assistir à poesia "Seremos Sempre Assim" no YouTube
+        </a>
+      </li>
+      <li>
+        <a href="https://youtu.be/2i825adsCVg" target="_blank">
+          Assistir à poesia "Hoje Eu Quero Falar de Saudade" no YouTube
+        </a>
+      </li>
+      <li>
+        <a href="https://youtu.be/nPhrfEz__ig" target="_blank">
+          Assistir à poesia "Conforma-me Contigo" no YouTube
+        </a>
+      </li>
     </ul>
   `,
   convite: `
