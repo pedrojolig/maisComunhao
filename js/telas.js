@@ -3,7 +3,7 @@ export const telas = {
     <h1>Poesias de Ketyanne</h1>
     <ul>
       <li>
-        <a href="https://youtu.be/oQ8BKHoMZ1nY" target="_blank">
+        <a href="https://youtu.be/oQ8BKHoMZ1Y" target="_blank">
           Assistir à poesia "Minha Identidade" no YouTube
         </a>
       </li>
@@ -37,8 +37,23 @@ export const telas = {
 
   albuns: `
     <h1>Álbuns Mais Comunhão</h1>
+    <p>Escolha uma das opções abaixo para visualizar os detalhes:</p>
+    <ul>
+      <li>
+        <a href="#" onclick="abrirTela('epMaisComunhao')">
+          🎵 Ver EP "Mais Comunhão"
+        </a>
+      </li>
+      <li>
+        <a href="#" onclick="abrirTela('cdEntrega')">
+          💿 Ver CD "Entrega"
+        </a>
+      </li>
+    </ul>
+  `,
 
-    <h2>🎵 EP Mais Comunhão</h2>
+  epMaisComunhao: `
+    <h1>EP Mais Comunhão</h1>
     <ul>
       <li>
         <a href="https://open.spotify.com/intl-pt/track/6wn3ZDK4ahgIMW9BErWGVl?si=53db13e3c9924643" target="_blank">
@@ -51,8 +66,10 @@ export const telas = {
         </a>
       </li>
     </ul>
+  `,
 
-    <h2>💿 CD Entrega</h2>
+  cdEntrega: `
+    <h1>CD Entrega</h1>
     <ul>
       <li><a href="https://youtu.be/VVxcTFSS1nQ" target="_blank">Assistir à poesia "Diante de Ti"</a></li>
       <li><a href="https://youtu.be/tWkPo_8vYE4?si=qC4ckEZ7SiBErZoQ" target="_blank">Ouvir "Diante de Ti"</a></li>
