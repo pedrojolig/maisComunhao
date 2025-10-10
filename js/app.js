@@ -44,7 +44,7 @@ window.abrirTela = function (tela) {
   } else if (tela === "quemSomos") {
     tocarSom("quemSomos");
   } else if (tela === "albuns") {
-    tocarSom("albuns");
+    tocarSom("discografia"); // ✅ corrigido aqui
   } else if (tela === "cdEntrega") {
     tocarSom("entrega");
   } else if (tela === "epMaisComunhao") {

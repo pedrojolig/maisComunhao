@@ -46,7 +46,7 @@ export const telas = {
       </li>
       <li>
         <a href="#" onclick="abrirTela('cdEntrega')">
-          💿 CD "Entrega"
+          CD "Entrega"
         </a>
       </li>
     </ul>
