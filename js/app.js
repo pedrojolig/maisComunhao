@@ -24,32 +24,34 @@ window.abrirTela = function (tela) {
 
   atualizarBotaoSom();
 
-  conteudo.innerHTML = telas[tela] || "<p>Tela não encontrada.</p>";
+  conteudo.classList.remove("fade-in");
+  conteudo.classList.add("fade-out");
 
-  // Sons específicos por tela
-  if (tela === "convite") {
-    configurarFormularioConvite();
-    tocarSom("som-formulario");
-  }
+  setTimeout(() => {
+    conteudo.innerHTML = telas[tela] || "<p>Tela não encontrada.</p>";
+    conteudo.classList.remove("fade-out");
+    conteudo.classList.add("fade-in");
 
-  if (tela === "faleConosco") {
-    configurarFormularioContato();
-    tocarSom("faleConosco");
-  }
-
-  if (tela === "loja") {
-    tocarSom("loja");
-  } else if (tela === "poesias") {
-    tocarSom("poesias");
-  } else if (tela === "quemSomos") {
-    tocarSom("quemSomos");
-  } else if (tela === "albuns") {
-    tocarSom("discografia"); // ✅ corrigido aqui
-  } else if (tela === "cdEntrega") {
-    tocarSom("entrega");
-  } else if (tela === "epMaisComunhao") {
-    tocarSom("epMaisComunhao");
-  }
+    if (tela === "convite") {
+      configurarFormularioConvite();
+      tocarSom("som-formulario");
+    } else if (tela === "faleConosco") {
+      configurarFormularioContato();
+      tocarSom("faleConosco");
+    } else if (tela === "loja") {
+      tocarSom("loja");
+    } else if (tela === "poesias") {
+      tocarSom("poesias");
+    } else if (tela === "quemSomos") {
+      tocarSom("quemSomos");
+    } else if (tela === "albuns") {
+      tocarSom("discografia");
+    } else if (tela === "cdEntrega") {
+      tocarSom("entrega");
+    } else if (tela === "epMaisComunhao") {
+      tocarSom("epMaisComunhao");
+    }
+  }, 300);
 };
 
 window.mostrarMenuInicial = function () {
