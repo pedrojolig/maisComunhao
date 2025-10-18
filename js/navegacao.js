@@ -34,7 +34,7 @@ export function mostrarMenuInicial() {
 
     <h3>Confira nossa agenda</h3>
     <p>
-      Dia 11 de outubro de 2025: evento na Arena de Pernambuco, às 13 horas.
+    Estamos atualizando a nossa agenda
     </p>
   `;
 
